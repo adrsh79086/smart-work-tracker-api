@@ -5,7 +5,7 @@ export class AppService {
   getHello(): string {
     return (
       
-      'helo'
+      'kya hal hai begt\\\\'
     );
   }
 }
