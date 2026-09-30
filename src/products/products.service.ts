@@ -30,10 +30,27 @@ export class productsService {
     },
     ]
 
-    getProduct(){
+    getProduct(name?: string){
+
+      if(name){
+       return this.product.filter((item)=> item.name.toLowerCase().includes(name.toLowerCase()));
+      }
+
         return this.product;
     }
 
+   getProductById(id: number) {
+    return this.product.find(i => i.id === id);
+  }
 
+  createProducts(body:any){
+    const newProduct = {
+       id: this.product.length+1,
+      name: body.name,
+      price: body.price,
+    }
+    this.product.push(newProduct);
+    return "Producst hogya add bhaishb"
+  }
 
 }
